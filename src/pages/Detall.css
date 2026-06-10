@@ -1,0 +1,146 @@
+.detall {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.detall-back {
+  background: none;
+  border: none;
+  color: #c9a84c;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.detall-back:hover { color: #f5ead0; }
+
+.detall-card {
+  background: #1e0f02;
+  border: 1px solid #3d1f00;
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Imatge gran del detall (URL externa) */
+.detall-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: #0d0703;
+  border: 1px solid #3d1f00;
+}
+
+.detall-icon {
+  font-size: 4rem;
+  flex-shrink: 0;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0d0703;
+  border: 1px solid #3d1f00;
+  border-radius: 10px;
+}
+
+.detall-content { flex: 1; }
+
+.detall-tipus {
+  display: inline-block;
+  background: #3d1f00;
+  color: #c9a84c;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.detall-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #f5ead0;
+  margin-bottom: 0.75rem;
+}
+
+.detall-grad {
+  color: #8a6840;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.detall-grad strong { color: #c9a84c; }
+
+.detall-desc {
+  color: #7a5830;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.detall-preu {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #c9a84c;
+  margin-bottom: 1rem;
+}
+
+.detall-missatge {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #c9a84c;
+}
+
+.detall-missatge--ok { color: #7dcc7d; }
+.detall-missatge--error { color: #f08080; }
+
+.detall-btn {
+  background: #c9a84c;
+  color: #1a0a00;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.detall-btn:hover:not(:disabled) {
+  background: #e0bf6a;
+  transform: translateY(-2px);
+}
+
+.detall-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.detall-loading, .detall-error {
+  text-align: center;
+  padding: 4rem;
+  color: #8a6840;
+}
+
+.detall-error { color: #c0392b; }
+
+/* Responsive: en pantalles petites, el card s'apila */
+@media (max-width: 640px) {
+  .detall-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .detall-img,
+  .detall-icon {
+    width: 100%;
+    height: 240px;
+  }
+}

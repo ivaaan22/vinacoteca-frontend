@@ -1,0 +1,260 @@
+.dashboard {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.dashboard h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #f5ead0;
+  margin-bottom: 1.5rem;
+}
+
+.dash-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.dash-tabs button {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #3d1f00;
+  background: transparent;
+  color: #8a6840;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.dash-tabs button.active,
+.dash-tabs button:hover {
+  background: #c9a84c;
+  color: #1a0a00;
+  border-color: #c9a84c;
+  font-weight: 700;
+}
+
+.dash-form-card {
+  background: #1e0f02;
+  border: 1px solid #3d1f00;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dash-form-card h2,
+.dash-llista h2 {
+  font-size: 1rem;
+  color: #c9a84c;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.dash-missatge {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.dash-missatge.ok {
+  background: #0a2a0a;
+  border: 1px solid #2a6a2a;
+  color: #7dcc7d;
+}
+
+.dash-missatge.error {
+  background: #3d0a0a;
+  border: 1px solid #7a1a1a;
+  color: #f08080;
+}
+
+.dash-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.dash-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: #b09060;
+  font-size: 0.85rem;
+}
+
+.dash-form input {
+  background: #0f0500;
+  border: 1px solid #3d1f00;
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  color: #f5ead0;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.dash-form input:focus { border-color: #c9a84c; }
+
+/* Preview de la imatge al formulari */
+.dash-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.dash-preview-label {
+  color: #8a6840;
+  font-size: 0.8rem;
+}
+
+.dash-preview img {
+  max-width: 200px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #3d1f00;
+  background: #0d0703;
+}
+
+.dash-form-btns {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.btn-primary {
+  background: #c9a84c;
+  color: #1a0a00;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover { background: #e0bf6a; }
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #3d1f00;
+  color: #8a6840;
+  padding: 0.65rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover { border-color: #8a6840; color: #c9a84c; }
+
+.dash-llista { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.dash-item {
+  background: #1e0f02;
+  border: 1px solid #3d1f00;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Mini-imatge del producte a la llista del dashboard */
+.dash-item-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #3d1f00;
+  flex-shrink: 0;
+}
+
+.dash-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.dash-item-info strong { color: #f5ead0; font-size: 0.95rem; }
+
+.dash-badge {
+  background: #3d1f00;
+  color: #c9a84c;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dash-badge.rol-admin { background: #3d1010; color: #f08080; }
+.dash-badge.rol-editor { background: #102a10; color: #7dcc7d; }
+.dash-badge.rol-usuari { background: #3d1f00; color: #c9a84c; }
+
+.dash-grad { color: #8a6840; font-size: 0.82rem; }
+.dash-desc { color: #7a5830; font-size: 0.8rem; }
+
+/* Preu del producte a la llista del dashboard */
+.dash-preu {
+  color: #c9a84c;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.dash-item-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-edit {
+  background: transparent;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit:hover { background: #c9a84c22; }
+
+.btn-delete {
+  background: transparent;
+  border: 1px solid #7a1a1a;
+  color: #f08080;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover { background: #3d0a0a; }
+
+.rol-select {
+  background: #0f0500;
+  border: 1px solid #3d1f00;
+  color: #c9a84c;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.dash-loading, .dash-buit {
+  color: #7a5830;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}

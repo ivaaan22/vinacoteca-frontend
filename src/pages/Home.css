@@ -1,0 +1,132 @@
+.home {
+  min-height: 100vh;
+}
+
+.home-hero {
+  background: linear-gradient(135deg, #1a0a00 0%, #2d1200 50%, #1a0a00 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, #c9a84c18 0%, transparent 70%);
+}
+
+.home-hero-content {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.home-eyebrow {
+  color: #c9a84c;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.home-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: #f5ead0;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.home-subtitle {
+  color: #b09060;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.home-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-primary {
+  padding: 0.8rem 2rem;
+  background: #c9a84c;
+  color: #1a0a00;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta-primary:hover {
+  background: #e0bf6a;
+  transform: translateY(-2px);
+}
+
+.cta-secondary {
+  padding: 0.8rem 2rem;
+  border: 1.5px solid #c9a84c;
+  color: #c9a84c;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta-secondary:hover {
+  background: #c9a84c18;
+  transform: translateY(-2px);
+}
+
+.home-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: #0f0500;
+}
+
+.category-card {
+  background: #1a0a00;
+  padding: 4rem 3rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s;
+  display: block;
+}
+
+.category-card:hover {
+  background: #250e00;
+}
+
+.category-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.category-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #f5ead0;
+  margin-bottom: 0.75rem;
+}
+
+.category-card p {
+  color: #8a6840;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .home-categories { grid-template-columns: 1fr; }
+}
