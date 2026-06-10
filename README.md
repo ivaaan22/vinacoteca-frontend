@@ -1,28 +1,28 @@
 # 🍷🍺 Vinacoteca — Frontend
 
-Aplicació **React + Vite** que forma part del projecte fullstack **VINACOTECA** (IA3). Interfície d'usuari per consultar productes, registrar-se amb foto, fer comandes i gestionar el catàleg i usuaris des de dashboards diferenciats per rol.
+Aplicación **React + Vite** que forma parte del proyecto fullstack **VINACOTECA** (IA3). Interfaz de usuario para consultar productos, registrarse con foto, hacer pedidos y gestionar el catálogo y usuarios desde dashboards diferenciados por rol.
 
 ## 🛠️ Stack
 
 - **React 19** + **Vite 8**
-- **React Router DOM 7** — navegació SPA
-- **Axios** — peticions HTTP amb interceptors JWT
-- **Context API** — gestió d'estat global d'autenticació
-- Desplegat a **Vercel**
+- **React Router DOM 7** — navegación SPA
+- **Axios** — peticiones HTTP con interceptores JWT
+- **Context API** — gestión de estado global de autenticación
+- Desplegado en **Vercel**
 
-## 🌐 URLs del projecte
+## 🌐 URLs del proyecto
 
-| Servei    | URL                                                        |
+| Servicio  | URL                                                        |
 | --------- | ---------------------------------------------------------- |
 | Frontend  | https://vinacoteca-frontend.vercel.app                     |
 | Backend   | https://vinacoteca-backend-bztx.onrender.com               |
 
-## 📋 Requisits
+## 📋 Requisitos
 
 - Node.js 18+
-- El backend de Vinacoteca funcionant (local o desplegat)
+- El backend de Vinacoteca funcionando (local o desplegado)
 
-## 🚀 Instal·lació
+## 🚀 Instalación
 
 ```bash
 git clone https://github.com/ivaaan22/vinacoteca-frontend.git
@@ -30,31 +30,31 @@ cd vinacoteca-frontend
 npm install
 ```
 
-## 🔐 Variables d'entorn
+## 🔐 Variables de entorno
 
-Crea un fitxer `.env` a l'arrel basant-te en `.env.example`:
+Crea un fichero `.env` en la raíz basándote en `.env.example`:
 
 ```env
 VITE_API_URL=http://localhost:3001
 ```
 
-| Variable       | Descripció                                  | Exemple                                        |
-| -------------- | ------------------------------------------- | ---------------------------------------------- |
-| `VITE_API_URL` | URL del backend (sense `/` al final)        | `http://localhost:3001` o URL de producció     |
+| Variable       | Descripción                                  | Ejemplo                                        |
+| -------------- | -------------------------------------------- | ---------------------------------------------- |
+| `VITE_API_URL` | URL del backend (sin `/` al final)           | `http://localhost:3001` o URL de producción    |
 
-> ⚠️ El fitxer `.env` és al `.gitignore` i mai s'ha de pujar al repositori.
-> En producció (Vercel), configura `VITE_API_URL` al panell d'Environment Variables.
+> ⚠️ El fichero `.env` está en `.gitignore` y nunca debe subirse al repositorio.
+> En producción (Vercel), configura `VITE_API_URL` en el panel de Environment Variables.
 
-## ▶️ Execució
+## ▶️ Ejecución
 
 ```bash
-# Desenvolupament (http://localhost:5173)
+# Desarrollo (http://localhost:5173)
 npm run dev
 
-# Build de producció
+# Build de producción
 npm run build
 
-# Previsualitzar el build localment
+# Previsualizar el build localmente
 npm run preview
 ```
 
@@ -63,100 +63,100 @@ npm run preview
 ```
 src/
 ├── api/
-│   └── axios.js              # Client HTTP centralitzat amb interceptors
-│                             # (token JWT automàtic, gestió 401/403)
+│   └── axios.js              # Cliente HTTP centralizado con interceptores
+│                             # (token JWT automático, gestión 401/403)
 ├── components/
-│   ├── Navbar.jsx            # Navegació amb avatar d'usuari i rol
-│   └── RutaProtegida.jsx     # HOC: redirigeix si no hi ha token o rol incorrecte
+│   ├── Navbar.jsx            # Navegación con avatar de usuario y rol
+│   └── RutaProtegida.jsx     # HOC: redirige si no hay token o rol incorrecto
 ├── context/
-│   └── AuthContext.jsx       # Estat global: usuari, token, login(), logout()
-│                             # Persistència via localStorage
+│   └── AuthContext.jsx       # Estado global: usuario, token, login(), logout()
+│                             # Persistencia via localStorage
 ├── pages/
-│   ├── Home.jsx              # Pàgina d'inici (pública)
-│   ├── Vins.jsx              # Catàleg de vins (públic)
-│   ├── Cerveses.jsx          # Catàleg de cerveses (públic)
-│   ├── DetallVi.jsx          # Detall d'un vi + fer comanda
-│   ├── DetallCervesa.jsx     # Detall d'una cervesa + fer comanda
-│   ├── Login.jsx             # Formulari de login
-│   ├── Registre.jsx          # Registre amb pujada de foto (multipart)
-│   ├── Perfil.jsx            # Perfil de l'usuari autenticat + editar
-│   ├── Comandes.jsx          # Les meves comandes
+│   ├── Home.jsx              # Página de inicio (pública)
+│   ├── Vins.jsx              # Catálogo de vinos (público)
+│   ├── Cerveses.jsx          # Catálogo de cervezas (público)
+│   ├── DetallVi.jsx          # Detalle de un vino + hacer pedido
+│   ├── DetallCervesa.jsx     # Detalle de una cerveza + hacer pedido
+│   ├── Login.jsx             # Formulario de login
+│   ├── Registre.jsx          # Registro con subida de foto (multipart)
+│   ├── Perfil.jsx            # Perfil del usuario autenticado + editar
+│   ├── Comandes.jsx          # Mis pedidos
 │   └── dashboard/
-│       ├── DashboardEditor.jsx  # CRUD de productes (editor + admin)
-│       └── DashboardAdmin.jsx   # CRUD productes + gestió usuaris/rols
-├── App.jsx                   # Router principal amb totes les rutes
-└── main.jsx                  # Punt d'entrada
+│       ├── DashboardEditor.jsx  # CRUD de productos (editor + admin)
+│       └── DashboardAdmin.jsx   # CRUD productos + gestión usuarios/roles
+├── App.jsx                   # Router principal con todas las rutas
+└── main.jsx                  # Punto de entrada
 ```
 
-## 👥 Rutes i permisos
+## 👥 Rutas y permisos
 
-| Ruta                      | Accés                        | Descripció                              |
-| ------------------------- | ---------------------------- | --------------------------------------- |
-| `/`                       | Públic                       | Pàgina d'inici                          |
-| `/vins`                   | Públic                       | Catàleg de vins amb imatge i preu       |
-| `/vins/:id`               | Públic                       | Detall de vi + botó de comanda          |
-| `/cerveses`               | Públic                       | Catàleg de cerveses                     |
-| `/cerveses/:id`           | Públic                       | Detall de cervesa + botó de comanda     |
-| `/login`                  | Públic                       | Iniciar sessió                          |
-| `/registre`               | Públic                       | Registre amb foto (multipart/form-data) |
-| `/perfil`                 | Autenticat                   | Veure i editar el propi perfil          |
-| `/comandes`               | Autenticat                   | Historial de comandes pròpies           |
-| `/dashboard`              | Editor o Admin               | CRUD de productes                       |
-| `/dashboard/usuaris`      | Només Admin                  | Gestió d'usuaris i assignació de rols   |
+| Ruta                      | Acceso                       | Descripción                              |
+| ------------------------- | ---------------------------- | ---------------------------------------- |
+| `/`                       | Público                      | Página de inicio                         |
+| `/vins`                   | Público                      | Catálogo de vinos con imagen y precio    |
+| `/vins/:id`               | Público                      | Detalle de vino + botón de pedido        |
+| `/cerveses`               | Público                      | Catálogo de cervezas                     |
+| `/cerveses/:id`           | Público                      | Detalle de cerveza + botón de pedido     |
+| `/login`                  | Público                      | Iniciar sesión                           |
+| `/registre`               | Público                      | Registro con foto (multipart/form-data)  |
+| `/perfil`                 | Autenticado                  | Ver y editar el propio perfil            |
+| `/comandes`               | Autenticado                  | Historial de pedidos propios             |
+| `/dashboard`              | Editor o Admin               | CRUD de productos                        |
+| `/dashboard/usuaris`      | Solo Admin                   | Gestión de usuarios y asignación de roles|
 
-## 🔄 Casos d'ús coberts (IA3)
+## 🔄 Casos de uso cubiertos (IA3)
 
-| CU  | Descripció                                               | Estat |
-| --- | -------------------------------------------------------- | :---: |
-| CU1 | Consultar productes (públic, sense login)                | ✅    |
-| CU2 | Registrar-se amb foto (multipart/form-data)              | ✅    |
-| CU3 | Iniciar sessió i obtenir token JWT                       | ✅    |
-| CU4 | Fer una comanda + correu de notificació al propietari    | ✅    |
-| CU5 | Dashboard editor: CRUD de productes (vins i cerveses)    | ✅    |
-| CU6 | Dashboard admin: gestió d'usuaris i assignació de rols   | ✅    |
+| CU  | Descripción                                               | Estado |
+| --- | --------------------------------------------------------- | :----: |
+| CU1 | Consultar productos (público, sin login)                  | ✅     |
+| CU2 | Registrarse con foto (multipart/form-data)                | ✅     |
+| CU3 | Iniciar sesión y obtener token JWT                        | ✅     |
+| CU4 | Hacer un pedido + correo de notificación al propietario   | ✅     |
+| CU5 | Dashboard editor: CRUD de productos (vinos y cervezas)    | ✅     |
+| CU6 | Dashboard admin: gestión de usuarios y asignación de roles| ✅     |
 
-## 🔑 Credencials de prova
+## 🔑 Credenciales de prueba
 
-Per obtenir les credencials cal executar `node scripts/seed.js` al backend.
+Para obtener las credenciales hay que ejecutar `node scripts/seed.js` en el backend.
 
-| Rol    | Email             | Contrasenya | Accés                                      |
-| ------ | ----------------- | ----------- | ------------------------------------------ |
-| Admin  | `admin@api.com`   | `admin123`  | Tot: CRUD productes + gestió d'usuaris     |
-| Editor | `editor@api.com`  | `editor123` | Dashboard CRUD de productes                |
-| Usuari | `usuari@api.com`  | `usuari123` | Catàleg + comandes                         |
+| Rol    | Email             | Contraseña  | Acceso                                      |
+| ------ | ----------------- | ----------- | ------------------------------------------- |
+| Admin  | `admin@api.com`   | `admin123`  | Todo: CRUD productos + gestión de usuarios  |
+| Editor | `editor@api.com`  | `editor123` | Dashboard CRUD de productos                 |
+| Usuario| `usuari@api.com`  | `usuari123` | Catálogo + pedidos                          |
 
-## 🛡️ Gestió d'autenticació i errors
+## 🛡️ Gestión de autenticación y errores
 
 **Token JWT:**
-- Es guarda a `localStorage` en fer login o registre
-- S'adjunta automàticament a totes les peticions via interceptor d'Axios
-- Es manté entre sessions (persistència en recarregar la pàgina)
-- S'esborra en fer logout
+- Se guarda en `localStorage` al hacer login o registro
+- Se adjunta automáticamente a todas las peticiones via interceptor de Axios
+- Se mantiene entre sesiones (persistencia al recargar la página)
+- Se borra al hacer logout
 
-**Errors HTTP:**
-- **401** (no autenticat): l'interceptor neteja la sessió i redirigeix a `/login`
-- **403** (sense permisos): es mostra un missatge clar sense tancar sessió
-- **404** (producte no trobat): missatge d'error controlat a la pàgina de detall
-- **Errors de xarxa**: missatge "No es pot connectar amb el servidor"
+**Errores HTTP:**
+- **401** (no autenticado): el interceptor limpia la sesión y redirige a `/login`
+- **403** (sin permisos): se muestra un mensaje claro sin cerrar sesión
+- **404** (producto no encontrado): mensaje de error controlado en la página de detalle
+- **Errores de red**: mensaje "No es pot connectar amb el servidor"
 
-## 🌐 Desplegament a Vercel
+## 🌐 Despliegue en Vercel
 
-1. Connecta el repo `ivaaan22/vinacoteca-frontend` a Vercel
-2. **Settings → Environment Variables** → afegeix:
+1. Conecta el repo `ivaaan22/vinacoteca-frontend` a Vercel
+2. **Settings → Environment Variables** → añade:
    - `VITE_API_URL` = `https://vinacoteca-backend-bztx.onrender.com`
-3. Marca les 3 opcions: Production, Preview, Development
-4. **Redeploy** (sense cache) després de qualsevol canvi de variable
-5. Comprova que el backend té `FRONTEND_URL` apuntant al domini de Vercel (per al CORS)
+3. Marca las 3 opciones: Production, Preview, Development
+4. **Redeploy** (sin cache) después de cualquier cambio de variable
+5. Comprueba que el backend tiene `FRONTEND_URL` apuntando al dominio de Vercel (para el CORS)
 
-> ⚠️ El fitxer `vercel.json` de l'arrel configura el rewrite SPA: totes les rutes serveixen `index.html` perquè React Router les gestioni al client. Sense això, recarregar qualsevol ruta que no sigui `/` dona 404.
+> ⚠️ El fichero `vercel.json` en la raíz configura el rewrite SPA: todas las rutas sirven `index.html` para que React Router las gestione en el cliente. Sin esto, recargar cualquier ruta que no sea `/` da 404.
 
-## 🔗 Repositoris
+## 🔗 Repositorios
 
-| Projecte          | GitHub                                                      |
-| ----------------- | ----------------------------------------------------------- |
-| Frontend (IA3)    | https://github.com/ivaaan22/vinacoteca-frontend             |
-| Backend (IA2/IA3) | https://github.com/ivaaan22/vinacoteca-backend              |
+| Proyecto           | GitHub                                                      |
+| ------------------ | ----------------------------------------------------------- |
+| Frontend (IA3)     | https://github.com/ivaaan22/vinacoteca-frontend             |
+| Backend (IA2/IA3)  | https://github.com/ivaaan22/vinacoteca-backend              |
 
-## 📝 Autoria
+## 📝 Autoría
 
-Projecte realitzat per **Ivan García Cuesta** com a part de l'IA3 del curs DAW2 (Desenvolupament d'Aplicacions Web).
+Proyecto realizado por **Ivan García Cuesta** como parte del IA3 del curso DAW2 (Desarrollo de Aplicaciones Web).
