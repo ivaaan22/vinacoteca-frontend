@@ -12,10 +12,10 @@ Aplicació **React + Vite** que forma part del projecte fullstack **VINACOTECA**
 
 ## 🌐 URLs del projecte
 
-| Servei   | URL                                                        |
-| -------- | ---------------------------------------------------------- |
-| Frontend | https://vinacoteca-frontend.vercel.app                     |
-| Backend  | https://vinacoteca-backend-1.onrender.com                  |
+| Servei    | URL                                                        |
+| --------- | ---------------------------------------------------------- |
+| Frontend  | https://vinacoteca-frontend.vercel.app                     |
+| Backend   | https://vinacoteca-backend-bztx.onrender.com               |
 
 ## 📋 Requisits
 
@@ -143,7 +143,7 @@ Per obtenir les credencials cal executar `node scripts/seed.js` al backend.
 
 1. Connecta el repo `ivaaan22/vinacoteca-frontend` a Vercel
 2. **Settings → Environment Variables** → afegeix:
-   - `VITE_API_URL` = `https://vinacoteca-backend-1.onrender.com`
+   - `VITE_API_URL` = `https://vinacoteca-backend-bztx.onrender.com`
 3. Marca les 3 opcions: Production, Preview, Development
 4. **Redeploy** (sense cache) després de qualsevol canvi de variable
 5. Comprova que el backend té `FRONTEND_URL` apuntant al domini de Vercel (per al CORS)
@@ -152,10 +152,10 @@ Per obtenir les credencials cal executar `node scripts/seed.js` al backend.
 
 ## 🔗 Repositoris
 
-| Projecte         | GitHub                                                      |
-| ---------------- | ----------------------------------------------------------- |
-| Frontend (IA3)   | https://github.com/ivaaan22/vinacoteca-frontend             |
-| Backend (IA2/IA3)| https://github.com/ivaaan22/vinacoteca-backend              |
+| Projecte          | GitHub                                                      |
+| ----------------- | ----------------------------------------------------------- |
+| Frontend (IA3)    | https://github.com/ivaaan22/vinacoteca-frontend             |
+| Backend (IA2/IA3) | https://github.com/ivaaan22/vinacoteca-backend              |
 
 ## 📝 Autoria
 
